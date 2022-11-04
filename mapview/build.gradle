@@ -59,6 +59,10 @@ task androidSourcesJar(type: Jar) {
     from android.sourceSets.main.java.source
 }
 
+artifacts {
+    archives androidSourcesJar
+}
+
 ext.'signing.keyId' = System.getenv('signingKeyId')
 ext.'signing.password' = System.getenv('signingPwd')
 ext.'signing.secretKeyRingFile' = System.getenv('signingKeyFile')
