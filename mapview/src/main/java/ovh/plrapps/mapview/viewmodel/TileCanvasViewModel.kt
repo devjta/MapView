@@ -57,7 +57,7 @@ internal class TileCanvasViewModel(parentScope: CoroutineScope, tileSize: Int,
         val bitmap = bitmapPool.get()
         emit(bitmap)
     }.flowOn(singleThreadDispatcher).map {
-        it ?: Bitmap.createBitmap(tileSize, tileSize, bitmapConfig)
+        it ?: Bitmap.createBitmap(tileSize +4 , tileSize +4, bitmapConfig)
     }
 
     private val bitmapConfig = if (highFidelityColors) {

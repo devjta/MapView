@@ -63,7 +63,7 @@ class TileCollectorTest {
             val bitmap = pool.get()
             emit(bitmap)
         }.flowOn(Dispatchers.Unconfined).map {
-            it ?: Bitmap.createBitmap(tileSize, tileSize, Bitmap.Config.RGB_565)
+            it ?: Bitmap.createBitmap(tileSize +4 , tileSize +4, Bitmap.Config.RGB_565)
         }
 
         val bitmapReference = try {
